@@ -1,0 +1,9 @@
+.git
+*.zip
+*.tar
+*.rar
+*.log
+*.sql
+vendor
+node_modules
+.env
