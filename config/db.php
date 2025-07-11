@@ -1,13 +1,12 @@
 <?php
-$host = 'host.docker.internal';
+$host = 'localhost'; // GANTI dari 'host.docker.internal'
 $user = 'root';
-$pass = '';
-$db = 'e_psikiater_db';
+$pass = ''; // kosongkan kalau pakai XAMPP
+$db   = 'e_psikiater_db';
 
-$conn = mysqli_connect($host, $user, $pass, $db);
+$conn = new mysqli($host, $user, $pass, $db);
 
-if (!$conn) {
-    die('Koneksi Gagal: ' . mysqli_connect_error());
+if ($conn->connect_error) {
+    die("Koneksi ke database gagal: " . $conn->connect_error);
 }
-
 ?>
